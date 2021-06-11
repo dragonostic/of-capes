@@ -1,16 +1,16 @@
 package net.drago.ofcapes.util;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.HashMap;
-
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.texture.NativeImage;
 import net.minecraft.client.texture.NativeImageBackedTexture;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Identifier;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.HashMap;
 
 public class PlayerHandler {
 
@@ -52,9 +52,11 @@ public class PlayerHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        NativeImageBackedTexture nIBT = new NativeImageBackedTexture(parseCape(cape));
-        Identifier capeTexture = MinecraftClient.getInstance().getTextureManager().registerDynamicTexture(uuid.replace("-", ""), nIBT);
-        capes.put(uuid, capeTexture);
+        if (cape != null) {
+            NativeImageBackedTexture nIBT = new NativeImageBackedTexture(parseCape(cape));
+            Identifier capeTexture = MinecraftClient.getInstance().getTextureManager().registerDynamicTexture(uuid.replace("-", ""), nIBT);
+            capes.put(uuid, capeTexture);
+        }
     }
 
     public static NativeImage parseCape(NativeImage image) {
