@@ -1,17 +1,17 @@
 {
-    "required": true,
-    "minVersion": "0.8",
-    "package": "net.drago.ofcapes.mixin",
-    "compatibilityLevel": "JAVA_16",
-    "mixins": [
-    ],
-    "client": [
-      "PlayerEntityRendererMixin",
-      "ClientPlayNetworkHandlerMixin",
-      "ClientWorldMixin",
-      "SkinOptionsScreenMixin"
-    ],
-    "injectors": {
-      "defaultRequire": 1
-    }
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.drago.ofcapes.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "mixins": [],
+  "client": [
+    "ClientPlayNetworkHandlerMixin",
+    "ClientWorldMixin",
+    "ColytraFeatureRendererMixin",
+    "PlayerEntityRendererMixin",
+    "SkinOptionsScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
   }
+}

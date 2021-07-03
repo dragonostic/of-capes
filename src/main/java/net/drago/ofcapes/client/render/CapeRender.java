@@ -1,5 +1,6 @@
 package net.drago.ofcapes.client.render;
 
+import net.drago.ofcapes.ofcapes;
 import net.drago.ofcapes.util.PlayerHandler;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -18,6 +19,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3f;
+import top.theillusivec4.colytra.common.util.ColytraNbt;
 
 @Environment(EnvType.CLIENT)
 public class CapeRender
@@ -31,7 +33,8 @@ public class CapeRender
     public void render(final MatrixStack matrixStack, final VertexConsumerProvider vertexConsumerProvider, final int i, final AbstractClientPlayerEntity abstractClientPlayerEntity, final float f, final float g, final float h, final float j, final float k, final float l) {
         if (abstractClientPlayerEntity.canRenderCapeTexture() && !abstractClientPlayerEntity.isInvisible() && abstractClientPlayerEntity.isPartVisible(PlayerModelPart.CAPE) && PlayerHandler.fromPlayer(abstractClientPlayerEntity) != null) {
             final ItemStack itemStack = abstractClientPlayerEntity.getEquippedStack(EquipmentSlot.CHEST);
-            if (itemStack.getItem() != Items.ELYTRA) {
+            boolean ifColytraIsNotActive = !ofcapes.isColytraLoaded() || ColytraNbt.getElytra(itemStack).isEmpty();
+            if (ifColytraIsNotActive && itemStack.getItem() != Items.ELYTRA) {
 
                 matrixStack.push();
                 matrixStack.translate(0.0D, 0.0D, 0.125D);
