@@ -24,11 +24,7 @@ public class PlayerHandler {
 
         if (((AbstractClientPlayerEntity) player).getCapeTexture() == null) {
 
-            Thread thread = new Thread() {
-                public void run() {
-                    setCapeFromURL(player.getUuidAsString(), String.format("http://s.optifine.net/capes/%s.png", player.getEntityName()));
-                }
-            };
+            Thread thread = new Thread(() -> setCapeFromURL(player.getUuidAsString(), String.format("http://s.optifine.net/capes/%s.png", player.getEntityName())));
             thread.start();
 
         }
