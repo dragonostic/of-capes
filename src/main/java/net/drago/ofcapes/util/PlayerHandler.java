@@ -73,7 +73,7 @@ public class PlayerHandler {
         NativeImage imgNew = new NativeImage(imageWidth, imageHeight, true);
         for (int x = 0; x < imageSrcWidth; x++) {
             for (int y = 0; y < srcHeight; y++) {
-                imgNew.setPixelColor(x, y, image.getPixelColor(x, y));
+                imgNew.setColor(x, y, image.getColor(x, y));
             }
         }
         image.close();
