@@ -2,7 +2,6 @@
   "schemaVersion": 1,
   "id": "fabric-ofcapes",
   "version": "${version}",
-
   "name": "Fabric OF Capes",
   "description": "Adds Optifine capes!",
   "authors": [
@@ -11,11 +10,9 @@
   "contact": {
     "discord": "drago#1969"
   },
-
   "license": "CC0-1.0",
   "icon": "assets/ofcapes/icon.png",
-
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "main": [
       "net.drago.ofcapes.ofcapes"
@@ -24,13 +21,9 @@
   "mixins": [
     "ofcapes.mixins.json"
   ],
-
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
     "minecraft": "1.18.x"
-  },
-  "suggests": {
-    "flamingo": "*"
   }
 }
