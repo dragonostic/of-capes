@@ -6,7 +6,8 @@
   "mixins": [],
   "client": [
     "PlayerListEntryMixin",
-    "SkinOptionsScreenMixin"
+    "SkinOptionsScreenMixin",
+    "CapeFeatureRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

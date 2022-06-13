@@ -11,7 +11,6 @@ import net.minecraft.client.gui.screen.option.SkinOptionsScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Util;
 
 import java.math.BigInteger;
@@ -26,7 +25,7 @@ public abstract class SkinOptionsScreenMixin extends GameOptionsScreen {
 
 	// This is supposed to be a quick and simple mod for snapshots, FAPI may not be available,
 	// and there should be little harm in using a hardcoded string in english.
-	private final TranslatableText changeBtnText = new TranslatableText("Open Cape Editor");
+	private final Text changeBtnText = Text.of("Open Cape Editor");
 	
 	@Inject(
 		at = @At("TAIL"),

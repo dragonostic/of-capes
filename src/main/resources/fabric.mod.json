@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "fabric-ofcapes",
   "version": "${version}",
-  "name": "Fabric OF Capes",
+  "name": "OF Capes",
   "description": "Adds Optifine capes!",
   "authors": [
     "Dragonostic"
@@ -22,8 +22,13 @@
     "ofcapes.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.3",
-    "fabric": "*",
-    "minecraft": "1.18.x"
+    "minecraft": "1.19.x"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.github_releases": "https://github.com/dragonostic/of-capes"
+      }
+    }
   }
 }
