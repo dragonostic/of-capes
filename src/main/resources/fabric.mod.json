@@ -22,7 +22,7 @@
     "ofcapes.mixins.json"
   ],
   "depends": {
-    "minecraft": "1.19.x"
+    "minecraft": "26.x"
   },
   "custom": {
     "modmenu": {
